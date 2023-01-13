@@ -1,0 +1,12 @@
+repoOwner: Create-Inc-Candidates
+learnMoreLink: https://create.xyz
+config:
+  version: 1.0.0
+projectName: Coding Assessment ishgervais
+abbreviatedProjectName: codingAssessmentIshgervais
+repoName: coding-assessment-ishgervais
+environments: []
+stack:
+  - features: []
+    kind: CodingAssessment
+    path: .
