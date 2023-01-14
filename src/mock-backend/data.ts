@@ -32,7 +32,7 @@ export const initialItems: Item[] = [
   {
     id: 1,
     name: 'Hair Conditioner',
-    price: 5.85,
+    price: 3,
     inventory: 5,
   },
   {

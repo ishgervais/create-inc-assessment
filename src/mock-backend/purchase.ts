@@ -20,4 +20,31 @@ export const executePurchase = async (
   await sleep(1000);
 
   // @TODO: Not implemented
+
+  // check if user has enough balance
+  // check if item is in stock
+  // decrement item inventory
+  // decrement user balance
+  // return updated state
+
+  const { balance, items } = state;
+  const item = items.find((item) => item.id === itemId);
+  if (!item) {
+    throw new Error('Item not found');
+  }
+
+  if (item.inventory === 0) {
+    throw new Error('Item out of stock');
+  }
+
+  if (balance < item.price) {
+    throw new Error('Insufficient funds');
+  }
+
+  return {
+    balance: balance - item.price,
+    items: items.map((item) =>
+      item.id === itemId ? { ...item, inventory: item.inventory - 1 } : item
+    ),
+  };
 };
